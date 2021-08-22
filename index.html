@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Home | Live Broadcast</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <script src="script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script>
+        let apiKey = '1be9a6884abd4c3ea143b59ca317c6b2';
+        $.getJSON('https://ipgeolocation.abstractapi.com/v1/?api_key=' + apiKey, function(data) {
+         ip_address = JSON.stringify(data.ip_address, null, 2);
+        });
+        async function displayIP() {
+            alert(ip_address)
+        }
+    </script>
+    <center>
+        <p>Larry is now streaming!</p>
+        <button onclick="displayIP()">Know your public IP Address    </button>
+    </center>
+  </body>
+</html>
